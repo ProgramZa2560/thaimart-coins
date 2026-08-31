@@ -117,15 +117,13 @@ flutter test
 
 ## CI/CD
 
-`.gitlab-ci.yml` pipeline stages:
+GitHub Actions workflow (`.github/workflows/ci-cd.yml`):
 
-1. **analyze** — `flutter analyze` (zero issues enforced)
-2. **test** — `flutter test`
-3. **scan** — dependency/secret audit step
-4. **build-android** — release APK/AAB artifact
-5. **build-ios** — unsigned IPA artifact
-6. **build-web** — web bundle artifact
-7. **deploy-web** — uploads the web bundle to the target server over SSH
+1. **analyze** — `flutter analyze` (zero issues enforced) — every push/PR
+2. **test** — `flutter test` with coverage artifact — every push/PR
+3. **scan** — secret scan on `lib/` + dependency audit — every push/PR
+4. **build-android / build-ios / build-web** — release artifacts (main branch only)
+5. **deploy-web** — uploads the web bundle to the target server over rsync/SSH (main branch only)
 
-Required CI variables: `COINRANKING_API_KEY`, `DEPLOY_HOST`, `DEPLOY_USER`,
-`DEPLOY_SSH_KEY`, `DEPLOY_PATH`.
+Required repository secrets: `COINRANKING_API_KEY`, `DEPLOY_HOST`,
+`DEPLOY_USER`, `DEPLOY_SSH_KEY`, `DEPLOY_PATH`.
