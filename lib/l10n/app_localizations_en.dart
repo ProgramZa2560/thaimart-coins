@@ -10,7 +10,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'Coins';
+  String get appTitle => 'Thaimart Coins';
 
   @override
   String get searchHint => 'Search';
