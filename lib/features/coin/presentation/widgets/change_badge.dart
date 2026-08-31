@@ -11,10 +11,11 @@ class ChangeBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isUp = change >= 0;
+    final color = isUp ? AppColors.green : AppColors.red;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-        color: isUp ? AppColors.greenBackground : AppColors.redBackground,
+        color: color,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
@@ -23,15 +24,15 @@ class ChangeBadge extends StatelessWidget {
           Icon(
             isUp ? Icons.arrow_upward : Icons.arrow_downward,
             size: 10,
-            color: isUp ? AppColors.green : AppColors.red,
+            color: Colors.white,
           ),
           const SizedBox(width: 2),
           Text(
             AppFormatters.formatChange(change),
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.w600,
-              color: isUp ? AppColors.green : AppColors.red,
+              color: Colors.white,
             ),
           ),
         ],
