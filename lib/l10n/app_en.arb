@@ -1,0 +1,16 @@
+{
+  "@@locale": "en",
+  "appTitle": "Coins",
+  "searchHint": "Search",
+  "noCoinsFound": "No coins found",
+  "somethingWentWrong": "Something went wrong",
+  "tryAgain": "Try again",
+  "readMore": "Read more",
+  "noDescription": "No description",
+  "inviteFriends": "Invite Friends",
+  "inviteSubtitle": "Get bonus coins for each friend!",
+  "price": "Price",
+  "marketCap": "Market Cap",
+  "selectCoinPrompt": "Select a coin to see details",
+  "loading": "Loading"
+}
