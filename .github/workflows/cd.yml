@@ -8,6 +8,11 @@ on:
 env:
   FLUTTER_VERSION: "3.47.2"
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build-android:
     name: Build Android
@@ -78,25 +83,23 @@ jobs:
           retention-days: 7
 
   deploy-web:
-    name: Deploy Web to Server
+    name: Deploy Web to GitHub Pages
     runs-on: ubuntu-latest
     needs: [build-web]
     if: github.event_name == 'push'
-    environment: production
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/download-artifact@v4
         with:
           name: web-release
           path: build/web/
-      - name: Rsync to server
-        env:
-          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
-          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
-          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
-          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
-        run: |
-          eval $(ssh-agent -s)
-          echo "$DEPLOY_SSH_KEY" | tr -d '\r' | ssh-add -
-          mkdir -p ~/.ssh
-          ssh-keyscan -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts
-          rsync -avz --delete build/web/ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/"
+      - name: Add .nojekyll
+        run: touch build/web/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/web/
+      - id: deployment
+        uses: actions/deploy-pages@v4
