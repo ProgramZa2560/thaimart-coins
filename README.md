@@ -117,13 +117,23 @@ flutter test
 
 ## CI/CD
 
-GitHub Actions workflow (`.github/workflows/ci-cd.yml`):
+Two GitHub Actions workflows:
 
-1. **analyze** — `flutter analyze` (zero issues enforced) — every push/PR
-2. **test** — `flutter test` with coverage artifact — every push/PR
-3. **scan** — secret scan on `lib/` + dependency audit — every push/PR
-4. **build-android / build-ios / build-web** — release artifacts (main branch only)
-5. **deploy-web** — uploads the web bundle to the target server over rsync/SSH (main branch only)
+### `.github/workflows/ci.yml` — runs on every push and pull request
+1. **analyze** — `flutter analyze --fatal-infos` (zero issues enforced)
+2. **test** — `flutter test` with coverage artifact
+3. **scan** — secret scan on `lib/` (fails the build if a key is committed)
 
-Required repository secrets: `COINRANKING_API_KEY`, `DEPLOY_HOST`,
-`DEPLOY_USER`, `DEPLOY_SSH_KEY`, `DEPLOY_PATH`.
+### `.github/workflows/cd.yml` — runs on push to `main` (or manual dispatch)
+1. **build-android** — release APK artifact
+2. **build-ios** — unsigned IPA artifact (`--no-codesign`)
+3. **build-web** — release web bundle (API key injected via `--dart-define`
+   from the `COINRANKING_API_KEY` repository secret)
+4. **deploy-web** — publishes the web build to **GitHub Pages**
+
+Live web app: https://programza2560.github.io/thaimart-coins/
+
+Downloadable APK/IPA artifacts are attached to each CD run under
+*Actions → CD → Artifacts*.
+
+Required repository secret: `COINRANKING_API_KEY`.
