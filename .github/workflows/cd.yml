@@ -96,6 +96,21 @@ jobs:
         with:
           name: web-release
           path: build/web/
+      - uses: actions/download-artifact@v4
+        with:
+          name: android-release
+          path: build/android/
+      - uses: actions/download-artifact@v4
+        with:
+          name: ios-release
+          path: build/ios/
+      - name: Prepare install page
+        run: |
+          mkdir -p build/web/apps
+          cp build/android/app-release.apk build/web/apps/thaimart-coins.apk
+          cp build/ios/Runner.ipa build/web/apps/thaimart-coins.ipa
+          cp deploy/thaimart-coins.plist build/web/apps/thaimart-coins.plist
+          cp deploy/install.html build/web/install.html
       - name: Add .nojekyll
         run: touch build/web/.nojekyll
       - uses: actions/configure-pages@v5
