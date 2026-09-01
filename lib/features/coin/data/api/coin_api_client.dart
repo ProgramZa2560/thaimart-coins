@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 
+import '../../../../core/api_key.dart';
 import '../../../../core/constants.dart';
 import '../models/coin.dart';
 
@@ -61,9 +62,8 @@ class CoinApiClient {
   }
 
   Map<String, String> get _headers {
-    const apiKey = String.fromEnvironment('COINRANKING_API_KEY');
-    if (apiKey.isEmpty) return const {};
-    return {'x-access-token': apiKey};
+    if (coinrankingApiKey.isEmpty) return const {};
+    return {'x-access-token': coinrankingApiKey};
   }
 
   List<Coin> _parseCoins(Map<String, dynamic> data) {

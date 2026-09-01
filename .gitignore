@@ -49,3 +49,6 @@ app.*.map.json
 
 # Contains local API key (dart-define)
 .vscode/
+
+# Local API key fallback (do not commit)
+lib/core/api_key.dart
