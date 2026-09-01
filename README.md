@@ -3,6 +3,9 @@
 A cryptocurrency market app built with **Flutter 3.47 (Dart 3.13)** using the
 [Coinranking API v2](https://coinranking.com/api/documentation).
 
+📖 **Full documentation & spec (feature by feature, with screenshots):**
+**[DOCS.md](DOCS.md)**
+
 ## Features
 
 - Coin list (10 coins per page, infinite scroll, no "Load more" button)

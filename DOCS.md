@@ -8,6 +8,10 @@
 
 ## 0. Overview
 
+| หน้าจอหลัก | Install page |
+|---|---|
+| ![Home](docs/img/home.png) | ![Install](docs/img/install.png) |
+
 | หัวข้อ | ค่า |
 |---|---|
 | ชื่อแอป | Thaimart Coins |
@@ -49,6 +53,8 @@
 - Pagination: pageSize **20** (`lib/core/constants.dart`), infinite scroll เลื่อนใกล้จบ 200px โหลดหน้าถัดไป
 - Pull to refresh (ปิดระหว่าง search)
 
+![Home — coin list](docs/img/home.png)
+
 ---
 
 ## 2. Top 3 Coins
@@ -63,6 +69,8 @@
 - การ์ด 3 ใบแนวนอน, ไอคอน 36, symbol 14pt w700, ราคา 12pt `#5A585C`
 - พื้น `#F7F2FA`, เงา `#E1DBE2`, radius 14, outer padding `(12, 8, 12, 8)`
 - ซ่อนตอนกำลัง search; เหรียญ 3 ตัวแรกไม่ซ้ำใน list หลัก
+
+![Top 3 cards](docs/img/top3.png)
 
 ---
 
@@ -84,6 +92,8 @@
   - ไม่มี website → ไม่แสดง link; description ว่าง → "No description"
 - มือถือ (<800dp): bottom sheet / แท็บเล็ต (≥800dp): pane ขวา sticky
 
+![Detail — bottom sheet](docs/img/detail.png)
+
 ---
 
 ## 4. Search
@@ -100,6 +110,8 @@
 - Outer padding `(12, 4, 12, 4)`; icon 🔍 20 ห่างซ้าย 7; gap icon→text 4
 - Text/hint **16pt** (hint `#5A585C`); ปุ่ม clear × 36×36 แสดงเมื่อมีข้อความ
 - **Debounce 1s** (`searchDebounce`); แตะเหรียญ → unfocus ก่อนเปิด detail (กัน keyboard เด้งกลับ)
+
+![Search bar](docs/img/search.png)
 
 ---
 
@@ -178,6 +190,8 @@
 | **iPhone/iPad (PWA)** | เปิดลิงก์ใน Safari → Share ⬆︎ → เลื่อนล่างสุด → Add to Home Screen (ไม่ต้องมีคอม) |
 | **Android** | Chrome → Install app หรือดาวน์โหลด APK จาก [CD artifacts](https://github.com/ProgramZa2560/thaimart-coins/actions/workflows/cd.yml) |
 | **iOS แบบแอปจริง** | ต้องมี paid Apple Developer ($99/ปี) — ปัจจุบัน IPA เป็น unsigned |
+
+![Install page](docs/img/install.png)
 
 **CD pipeline** (`cd.yml`): Build Android APK → Build iOS (unsigned IPA) → Build Web (API key จาก secret) → Deploy GitHub Pages
 **CI pipeline** (`ci.yml`): analyze (`--fatal-infos`) → test (coverage) → secret scan
