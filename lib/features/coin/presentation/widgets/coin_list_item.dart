@@ -19,11 +19,11 @@ class CoinListItem extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 9, 16, 9),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
             child: Row(
               children: [
-                CoinIcon(url: coin.iconUrl, size: 36),
-                const SizedBox(width: 10),
+                CoinIcon(url: coin.iconUrl),
+                const SizedBox(width: 12),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,16 +31,16 @@ class CoinListItem extends StatelessWidget {
                       Text(
                         coin.symbol,
                         style: const TextStyle(
-                          fontSize: 14,
+                          fontSize: 15,
                           fontWeight: FontWeight.w700,
                           color: AppColors.textPrimary,
                         ),
                       ),
-                      const SizedBox(height: 2),
+                      const SizedBox(height: 4),
                       Text(
                         AppFormatters.formatMarketCap(coin.marketCap),
                         style: const TextStyle(
-                          fontSize: 11,
+                          fontSize: 12,
                           color: AppColors.textSecondary,
                         ),
                       ),
@@ -48,20 +48,25 @@ class CoinListItem extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 8),
-                Text(
-                  AppFormatters.formatPrice(coin.price),
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.textPrimary,
-                  ),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      AppFormatters.formatPrice(coin.price),
+                      style: const TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.textPrimary,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    ChangeBadge(change: coin.change),
+                  ],
                 ),
-                const SizedBox(width: 8),
-                ChangeBadge(change: coin.change),
               ],
             ),
           ),
-          const Divider(height: 1, indent: 62),
+          const Divider(height: 1, indent: 68),
         ],
       ),
     );
