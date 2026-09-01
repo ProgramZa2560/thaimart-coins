@@ -30,13 +30,20 @@ class TopCoinsSection extends StatelessWidget {
               onTap: () => onCoinTap(coin),
               child: Container(
                 margin: EdgeInsets.only(
-                  left: index == 0 ? 0 : 6,
-                  right: index == top3.length - 1 ? 0 : 6,
+                  left: index == 0 ? 0 : 4,
+                  right: index == top3.length - 1 ? 0 : 4,
                 ),
                 padding: const EdgeInsets.symmetric(vertical: 14),
                 decoration: BoxDecoration(
                   color: const Color(0xFFF7F2FA),
                   borderRadius: BorderRadius.circular(14),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.06),
+                      blurRadius: 6,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
                 ),
                 child: Column(
                   children: [
