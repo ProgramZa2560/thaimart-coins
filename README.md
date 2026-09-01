@@ -145,6 +145,21 @@ Two GitHub Actions workflows:
 
 Live web app: https://programza2560.github.io/thaimart-coins/
 
+**Install page (PWA guide + APK download):**
+https://programza2560.github.io/thaimart-coins/install.html
+
+**How to install:**
+
+📱 **iPhone / iPad** (no computer needed):
+1. Open https://programza2560.github.io/thaimart-coins/ in **Safari**
+2. Tap the **Share** button ⬆︎ (square with arrow, bottom bar)
+3. Scroll the share menu **all the way down** → tap **Add to Home Screen**
+4. Tap **Add** — the icon appears on the Home Screen and opens full-screen like a native app
+
+🤖 **Android:**
+- Open the link in Chrome → menu ⋮ → **Add to Home screen** / *Install app*, or
+- Download the APK from the latest CD run's **Artifacts** and allow "install from unknown sources"
+
 Downloadable APK/IPA artifacts are attached to each CD run under
 *Actions → CD → Artifacts*.
 

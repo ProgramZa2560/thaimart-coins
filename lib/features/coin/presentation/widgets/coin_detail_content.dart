@@ -146,7 +146,6 @@ class CoinDetailContent extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 14,
                     height: 1.5,
-                    fontWeight: FontWeight.w600,
                     color: Color(0xFF66AAF4),
                     decoration: TextDecoration.underline,
                     decorationColor: Color(0xFF66AAF4),

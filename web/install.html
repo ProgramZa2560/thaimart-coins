@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install — Thaimart Coins</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="manifest" href="manifest.json">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #FEF7FF; color: #000; min-height: 100vh;
+    display: flex; justify-content: center; padding: 32px 16px;
+  }
+  main { max-width: 560px; width: 100%; }
+  header { text-align: center; margin-bottom: 32px; }
+  header img { width: 96px; height: 96px; border-radius: 22px; }
+  h1 { font-size: 24px; margin-top: 16px; }
+  p.sub { color: #5A585C; margin-top: 8px; font-size: 15px; }
+  section {
+    background: #fff; border-radius: 16px; padding: 24px; margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  }
+  h2 { font-size: 18px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  ol { margin: 12px 0 0 20px; }
+  li { margin-bottom: 10px; font-size: 15px; line-height: 1.5; }
+  a.btn {
+    display: inline-block; background: #715EA9; color: #fff; text-decoration: none;
+    padding: 12px 20px; border-radius: 12px; font-weight: 600; margin-top: 12px;
+  }
+  .app-link { text-align: center; margin-top: 8px; }
+  .app-link a { color: #715EA9; font-weight: 600; font-size: 16px; }
+  .note { color: #5A585C; font-size: 13px; margin-top: 12px; line-height: 1.5; }
+  .badge { background: #EDE7F6; color: #5E31B2; font-size: 12px; font-weight: 600;
+           padding: 2px 10px; border-radius: 999px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="icons/Icon-512.png" alt="Thaimart Coins">
+    <h1>Thaimart Coins</h1>
+    <p class="sub">Install the app on your device</p>
+  </header>
+
+  <section>
+    <h2>📱 iPhone / iPad <span class="badge">Recommended</span></h2>
+    <ol>
+      <li>Open <b>https://programza2560.github.io/thaimart-coins/</b> in <b>Safari</b></li>
+      <li>Tap the <b>Share</b> button <span style="font-size:17px">⬆︎</span> (square with arrow, bottom bar)</li>
+      <li>Scroll down and tap <b>Add to Home Screen</b></li>
+      <li>Tap <b>Add</b> — the app icon appears on your Home Screen</li>
+    </ol>
+    <p class="note">Works like a native app: full screen, own icon. Must use Safari (Chrome on iOS does not support this).</p>
+  </section>
+
+  <section>
+    <h2>🤖 Android</h2>
+    <p style="font-size:15px">Open the web app in Chrome and tap <b>“Install app”</b> in the address bar, or download the APK:</p>
+    <a class="btn" href="https://github.com/ProgramZa2560/thaimart-coins/actions/workflows/cd.yml?query=branch%3Amain" target="_blank" rel="noopener">Download APK (latest CD run)</a>
+    <p class="note">From the Actions run page, scroll to <b>Artifacts</b> → download the Android APK → allow “install from unknown sources” when prompted.</p>
+  </section>
+
+  <section>
+    <h2>💻 Desktop / other</h2>
+    <p style="font-size:15px">Just use the web app directly:</p>
+    <div class="app-link"><a href="/" >Open Thaimart Coins →</a></div>
+  </section>
+</main>
+</body>
+</html>

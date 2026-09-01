@@ -73,7 +73,7 @@
 - Padding: **12dp ทุกด้าน** (บน 12, ล่าง 24), ซ้ายขวาเท่า rhythm 12dp
 - ชื่อเหรียญสีตาม `coin.color` (default ดำ), symbol 18pt **w400**
 - icon 64×64, badge จัดกึ่งกลาง
-- ค่า price/marketCap สี `#6D6A6F`, description มี link Read more `#66AAF4` ขีดเส้นใต้
+- ค่า price/marketCap สี `#6D6A6F`, description มี link Read more `#66AAF4` ขีดเส้นใต้ (**w400 ปกติ** ไม่หนา)
 - ระยะ description → Read more: Read more ใช้ `height: 1.5` เหมือน desc (ไม่มี SizedBox) → pitch บรรทัดเท่ากันเป๊ะ 21dp (วัดจริง 63px ทุกบรรทัด)
 
 ### Responsive
