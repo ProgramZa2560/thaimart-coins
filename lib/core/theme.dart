@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const background = Color(0xFFFDF3F9);
+  static const background = Color(0xFFFEF7FF);
   static const cardBackground = Color(0xFFFBEAF6);
-  static const textPrimary = Color(0xFF1B1B1F);
-  static const textSecondary = Color(0xFF9A96A3);
-  static const red = Color(0xFFF0364B);
-  static const redBackground = Color(0xFFFDE4E7);
-  static const green = Color(0xFF14B85C);
-  static const greenBackground = Color(0xFFE2F6E9);
+  static const textPrimary = Color(0xFF000000);
+  static const textSecondary = Color(0xFFB9B7BA);
+  static const red = Color(0xFFEF5350);
+  static const redBorder = Color(0xFFEE3E37);
+  static const green = Color(0xFF66BB6A);
+  static const greenBorder = Color(0xFF49B54F);
   static const accent = Color(0xFF8B5CF6);
-  static const divider = Color(0xFFF0E4EC);
+  static const divider = Color(0xFFDAD3DE);
   static const searchField = Color(0xFFEFEDF0);
 }
 

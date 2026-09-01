@@ -12,11 +12,13 @@ class ChangeBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     final isUp = change >= 0;
     final color = isUp ? AppColors.green : AppColors.red;
+    final borderColor = isUp ? AppColors.greenBorder : AppColors.redBorder;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: borderColor),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
