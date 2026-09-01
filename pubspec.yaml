@@ -46,8 +46,6 @@ dependencies:
   cached_network_image: ^4.0.0
   bloc: ^9.2.1
   flutter_svg: ^2.3.0
-  google_fonts: ^8.2.1
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

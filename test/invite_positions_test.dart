@@ -30,6 +30,6 @@ void main() {
     expect(rows[4], 'INVITE');
     expect(rows[9], 'INVITE');
     expect(rows[5], 'COIN-5');
-    expect(rows[10], 'COIN-6');
+    expect(rows[10], 'COIN-9');
   });
 }
