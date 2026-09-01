@@ -114,7 +114,6 @@ jobs:
           cp build/android/app-release.apk build/web/apps/thaimart-coins.apk
           cp build/ios/Runner.ipa build/web/apps/thaimart-coins.ipa
           cp deploy/thaimart-coins.plist build/web/apps/thaimart-coins.plist
-          cp deploy/install.html build/web/install.html
       - name: Add .nojekyll
         run: touch build/web/.nojekyll
       - uses: actions/configure-pages@v5
