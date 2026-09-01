@@ -51,14 +51,14 @@ class CoinListItem extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      AppFormatters.formatPrice(coin.price),
-                      style: const TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.textPrimary,
-                      ),
-                    ),
+                Text(
+                  AppFormatters.formatPrice(coin.price),
+                  style: const TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.textPrimary,
+                  ),
+                ),
                     const SizedBox(width: 10),
                     ChangeBadge(change: coin.change),
                   ],
