@@ -20,6 +20,7 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
           cache: true
+      - run: cp lib/core/api_key.ci.dart lib/core/api_key.dart
       - run: flutter pub get
       - run: flutter analyze --fatal-infos
 
@@ -33,6 +34,7 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
           cache: true
+      - run: cp lib/core/api_key.ci.dart lib/core/api_key.dart
       - run: flutter pub get
       - run: flutter test --coverage
       - uses: actions/upload-artifact@v4

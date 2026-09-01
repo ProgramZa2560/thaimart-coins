@@ -28,6 +28,7 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
           cache: true
+      - run: cp lib/core/api_key.ci.dart lib/core/api_key.dart
       - run: flutter pub get
       - run: |
           flutter build apk --release \
@@ -48,6 +49,7 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
           cache: true
+      - run: cp lib/core/api_key.ci.dart lib/core/api_key.dart
       - run: flutter pub get
       - run: |
           flutter build ios --release --no-codesign \
@@ -72,6 +74,7 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: stable
           cache: true
+      - run: cp lib/core/api_key.ci.dart lib/core/api_key.dart
       - run: flutter pub get
       - run: |
           flutter build web --release \
