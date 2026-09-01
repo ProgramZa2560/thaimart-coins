@@ -24,7 +24,7 @@ class InviteFriendsTile extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 14),
               child: Row(
                 children: [
                 SizedBox(
@@ -65,7 +65,7 @@ class InviteFriendsTile extends StatelessWidget {
                 ],
               ),
             ),
-            const Divider(height: 1, indent: 72),
+            const Divider(height: 1, indent: 62),
           ],
         ),
       ),

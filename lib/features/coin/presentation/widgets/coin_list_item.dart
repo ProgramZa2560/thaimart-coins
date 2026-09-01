@@ -19,11 +19,11 @@ class CoinListItem extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 14),
             child: Row(
               children: [
                 CoinIcon(url: coin.iconUrl, size: 46),
-                const SizedBox(width: 10),
+                const SizedBox(width: 8),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,14 +59,14 @@ class CoinListItem extends StatelessWidget {
                     color: AppColors.textPrimary,
                   ),
                 ),
-                    const SizedBox(width: 10),
+                    const SizedBox(width: 8),
                     ChangeBadge(change: coin.change),
                   ],
                 ),
               ],
             ),
           ),
-          const Divider(height: 1, indent: 72),
+          const Divider(height: 1, indent: 62),
         ],
       ),
     );
