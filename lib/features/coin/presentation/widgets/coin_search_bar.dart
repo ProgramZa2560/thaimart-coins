@@ -55,7 +55,7 @@ class _CoinSearchBarState extends State<CoinSearchBar> {
           children: [
             const Icon(
               Icons.search,
-              color: AppColors.textSecondary,
+              color: Color(0xFF5A585C),
               size: 20,
             ),
             const SizedBox(width: 4),
@@ -74,7 +74,7 @@ class _CoinSearchBarState extends State<CoinSearchBar> {
                     hintText: l10n.searchHint,
                     hintStyle: const TextStyle(
                       fontSize: 15,
-                      color: AppColors.textSecondary,
+                      color: Color(0xFF5A585C),
                     ),
                   ),
                 ),
@@ -93,7 +93,7 @@ class _CoinSearchBarState extends State<CoinSearchBar> {
                   visualDensity: VisualDensity.compact,
                   icon: const Icon(
                     Icons.close,
-                    color: AppColors.textSecondary,
+                    color: Color(0xFF5A585C),
                     size: 20,
                   ),
                   onPressed: _clear,
