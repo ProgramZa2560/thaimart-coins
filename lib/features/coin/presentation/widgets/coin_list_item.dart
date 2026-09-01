@@ -48,8 +48,8 @@ class CoinListItem extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 8),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
                       AppFormatters.formatPrice(coin.price),
@@ -59,7 +59,7 @@ class CoinListItem extends StatelessWidget {
                         color: AppColors.textPrimary,
                       ),
                     ),
-                    const SizedBox(height: 6),
+                    const SizedBox(width: 10),
                     ChangeBadge(change: coin.change),
                   ],
                 ),
