@@ -16,9 +16,9 @@ class CoinDetailContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final color = coin.color != null
+    final color = coin.color != null && coin.color!.isNotEmpty
         ? Color(int.parse(coin.color!.replaceFirst('#', '0xff')))
-        : AppColors.accent;
+        : Colors.black;
     final hasWebsite = coin.websiteUrl != null && coin.websiteUrl!.isNotEmpty;
     return SingleChildScrollView(
       padding: const EdgeInsets.fromLTRB(20, 12, 20, 24),
@@ -67,7 +67,7 @@ class CoinDetailContent extends StatelessWidget {
                             text: AppFormatters.formatPrice(coin.price),
                             style: const TextStyle(
                               fontWeight: FontWeight.w600,
-                              color: AppColors.textSecondary,
+                              color: Color(0xFF6D6A6F),
                             ),
                           ),
                         ],
@@ -87,7 +87,7 @@ class CoinDetailContent extends StatelessWidget {
                             text: AppFormatters.formatMarketCap(coin.marketCap),
                             style: const TextStyle(
                               fontWeight: FontWeight.w600,
-                              color: AppColors.textSecondary,
+                              color: Color(0xFF6D6A6F),
                             ),
                           ),
                         ],
