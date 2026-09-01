@@ -26,7 +26,6 @@ class CoinDetailContent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 padding: const EdgeInsets.all(8),
@@ -44,17 +43,17 @@ class CoinDetailContent extends StatelessWidget {
                     Text.rich(
                       TextSpan(
                         text: coin.name,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
-                          color: AppColors.textPrimary,
+                          color: color,
                         ),
                         children: [
                           TextSpan(
                             text: ' (${coin.symbol})',
                             style: const TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w700,
                               color: AppColors.textSecondary,
                             ),
                           ),
@@ -126,15 +125,16 @@ class CoinDetailContent extends StatelessWidget {
                 Uri.parse(coin.websiteUrl!),
                 mode: LaunchMode.externalApplication,
               ),
-              child: Text(
-                l10n.readMore,
-                style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.accent,
-                  decoration: TextDecoration.underline,
+                child: Text(
+                  l10n.readMore,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xFF66AAF4),
+                    decoration: TextDecoration.underline,
+                    decorationColor: Color(0xFF66AAF4),
+                  ),
                 ),
-              ),
             ),
           ],
         ],
