@@ -60,19 +60,22 @@ class _CoinSearchBarState extends State<CoinSearchBar> {
             ),
             const SizedBox(width: 4),
             Expanded(
-              child: TextField(
-                controller: _controller,
-                onChanged: _onChanged,
-                textInputAction: TextInputAction.search,
-                style: const TextStyle(
-                  fontSize: 15,
-                  color: AppColors.textPrimary,
-                ),
-                decoration: InputDecoration.collapsed(
-                  hintText: l10n.searchHint,
-                  hintStyle: const TextStyle(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                child: TextField(
+                  controller: _controller,
+                  onChanged: _onChanged,
+                  textInputAction: TextInputAction.search,
+                  style: const TextStyle(
                     fontSize: 15,
-                    color: AppColors.textSecondary,
+                    color: AppColors.textPrimary,
+                  ),
+                  decoration: InputDecoration.collapsed(
+                    hintText: l10n.searchHint,
+                    hintStyle: const TextStyle(
+                      fontSize: 15,
+                      color: AppColors.textSecondary,
+                    ),
                   ),
                 ),
               ),
