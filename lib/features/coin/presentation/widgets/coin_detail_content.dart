@@ -20,7 +20,7 @@ class CoinDetailContent extends StatelessWidget {
 
   static const _symbolStyle = TextStyle(
     fontSize: 18,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w400,
     color: AppColors.textSecondary,
   );
 
