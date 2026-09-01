@@ -66,35 +66,37 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          final isWide = constraints.maxWidth >= wideBreakpoint;
-          final list = BlocBuilder<CoinListCubit, CoinListState>(
-            builder: (context, state) {
-              return Column(
-                children: [
-                  const CoinSearchBar(),
-                  Expanded(child: _buildBody(context, state)),
-                ],
-              );
-            },
-          );
-          if (!isWide) return list;
-          return Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              SizedBox(width: 420, child: list),
-              const VerticalDivider(width: 1),
-              Expanded(
-                child: BlocProvider(
-                  create: (_) => sl<CoinDetailCubit>(),
-                  child: _DetailPaneHost(uuid: _selectedUuid),
+      body: SafeArea(
+        bottom: false,
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final isWide = constraints.maxWidth >= wideBreakpoint;
+            final list = BlocBuilder<CoinListCubit, CoinListState>(
+              builder: (context, state) {
+                return Column(
+                  children: [
+                    const CoinSearchBar(),
+                    Expanded(child: _buildBody(context, state)),
+                  ],
+                );
+              },
+            );
+            if (!isWide) return list;
+            return Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(width: 420, child: list),
+                const VerticalDivider(width: 1),
+                Expanded(
+                  child: BlocProvider(
+                    create: (_) => sl<CoinDetailCubit>(),
+                    child: _DetailPaneHost(uuid: _selectedUuid),
+                  ),
                 ),
-              ),
-            ],
-          );
-        },
+              ],
+            );
+          },
+        ),
       ),
     );
   }
