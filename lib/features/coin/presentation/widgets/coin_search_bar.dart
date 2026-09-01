@@ -45,35 +45,53 @@ class _CoinSearchBarState extends State<CoinSearchBar> {
     final l10n = AppLocalizations.of(context)!;
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-      child: TextField(
-        controller: _controller,
-        onChanged: _onChanged,
-        textInputAction: TextInputAction.search,
-        decoration: InputDecoration(
-          hintText: l10n.searchHint,
-          hintStyle: const TextStyle(color: AppColors.textSecondary),
-          prefixIcon: const Padding(
-            padding: EdgeInsets.only(left: 13, right: 13),
-            child: Icon(Icons.search, color: AppColors.textSecondary, size: 22),
-          ),
-          prefixIconConstraints: const BoxConstraints(minWidth: 48),
-          suffixIcon: ValueListenableBuilder<TextEditingValue>(
-            valueListenable: _controller,
-            builder: (_, value, _) {
-              if (value.text.isEmpty) return const SizedBox.shrink();
-              return IconButton(
-                icon: const Icon(Icons.close, color: AppColors.textSecondary),
-                onPressed: _clear,
-              );
-            },
-          ),
-          filled: true,
-          fillColor: AppColors.searchField,
-          contentPadding: const EdgeInsets.fromLTRB(0, 12, 0, 12),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: BorderSide.none,
-          ),
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.searchField,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        padding: const EdgeInsets.fromLTRB(10, 0, 4, 0),
+        child: Row(
+          children: [
+            const Icon(
+              Icons.search,
+              color: AppColors.textSecondary,
+              size: 20,
+            ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: TextField(
+                controller: _controller,
+                onChanged: _onChanged,
+                textInputAction: TextInputAction.search,
+                style: const TextStyle(
+                  fontSize: 15,
+                  color: AppColors.textPrimary,
+                ),
+                decoration: InputDecoration.collapsed(
+                  hintText: l10n.searchHint,
+                  hintStyle: const TextStyle(
+                    fontSize: 15,
+                    color: AppColors.textSecondary,
+                  ),
+                ),
+              ),
+            ),
+            ValueListenableBuilder<TextEditingValue>(
+              valueListenable: _controller,
+              builder: (_, value, _) {
+                if (value.text.isEmpty) return const SizedBox.shrink();
+                return IconButton(
+                  icon: const Icon(
+                    Icons.close,
+                    color: AppColors.textSecondary,
+                    size: 20,
+                  ),
+                  onPressed: _clear,
+                );
+              },
+            ),
+          ],
         ),
       ),
     );
