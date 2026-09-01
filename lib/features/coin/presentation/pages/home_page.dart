@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/di.dart';
+import '../../../../core/invite_positions.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../data/models/coin.dart';
 import '../cubit/coin_detail_cubit.dart';
@@ -170,7 +171,7 @@ class _HomePageState extends State<HomePage> {
     final mainCoins = state.isSearching ? state.coins : state.coins.sublist(3);
     var displayPosition = 1;
     for (final coin in mainCoins) {
-      if (!state.isSearching && _isInvitePosition(displayPosition)) {
+      if (!state.isSearching && isInvitePosition(displayPosition)) {
         rows.add(const _InviteRow());
         displayPosition++;
       }
@@ -179,15 +180,6 @@ class _HomePageState extends State<HomePage> {
     }
     rows.add(const _FooterRow());
     return rows;
-  }
-
-  bool _isInvitePosition(int position) {
-    if (position < 5) return false;
-    var p = 5;
-    while (p < position) {
-      p *= 2;
-    }
-    return p == position;
   }
 
   Widget _buildRow(BuildContext context, CoinListState state, _Row row) {

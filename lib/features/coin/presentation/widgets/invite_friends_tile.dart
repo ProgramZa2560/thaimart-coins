@@ -45,9 +45,9 @@ class InviteFriendsTile extends StatelessWidget {
                             color: headColor,
                           ),
                         ),
-                        const SizedBox(height: 4),
-                        Text(
-                          l10n.inviteSubtitle,
+                      const SizedBox(height: 1),
+                      Text(
+                        l10n.inviteSubtitle,
                           style: const TextStyle(
                             fontSize: 12,
                             color: subColor,
