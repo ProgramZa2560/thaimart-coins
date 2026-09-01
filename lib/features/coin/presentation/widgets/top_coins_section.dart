@@ -37,11 +37,11 @@ class TopCoinsSection extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: const Color(0xFFF7F2FA),
                   borderRadius: BorderRadius.circular(14),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.06),
+                      color: Color(0xFFE1DBE2),
                       blurRadius: 6,
-                      offset: const Offset(0, 2),
+                      offset: Offset(0, 2),
                     ),
                   ],
                 ),
