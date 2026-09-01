@@ -20,24 +20,13 @@ class ChangeBadge extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: borderColor),
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
-            isUp ? Icons.arrow_upward : Icons.arrow_downward,
-            size: 10,
-            color: Colors.white,
-          ),
-          const SizedBox(width: 2),
-          Text(
-            AppFormatters.formatChange(change),
-            style: const TextStyle(
-              fontSize: 11,
-              fontWeight: FontWeight.w600,
-              color: Colors.white,
-            ),
-          ),
-        ],
+      child: Text(
+        AppFormatters.formatChange(change),
+        style: const TextStyle(
+          fontSize: 11,
+          fontWeight: FontWeight.w600,
+          color: Colors.white,
+        ),
       ),
     );
   }
