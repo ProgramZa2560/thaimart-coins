@@ -23,7 +23,7 @@ class ChangeBadge extends StatelessWidget {
       child: Text(
         AppFormatters.formatChange(change),
         style: const TextStyle(
-          fontSize: 11,
+          fontSize: 8,
           fontWeight: FontWeight.w600,
           color: Colors.white,
         ),
