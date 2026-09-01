@@ -91,7 +91,7 @@ class CoinDetailContent extends StatelessWidget {
                             text: AppFormatters.formatPrice(coin.price),
                             style: const TextStyle(
                               fontWeight: FontWeight.w400,
-                              color: Color(0xFF6D6A6F),
+                              color: AppColors.detailValue,
                             ),
                           ),
                         ],
@@ -111,7 +111,7 @@ class CoinDetailContent extends StatelessWidget {
                             text: AppFormatters.formatMarketCap(coin.marketCap),
                             style: const TextStyle(
                               fontWeight: FontWeight.w400,
-                              color: Color(0xFF6D6A6F),
+                              color: AppColors.detailValue,
                             ),
                           ),
                         ],
@@ -146,9 +146,9 @@ class CoinDetailContent extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 14,
                     height: 1.5,
-                    color: Color(0xFF66AAF4),
+                    color: AppColors.readMore,
                     decoration: TextDecoration.underline,
-                    decorationColor: Color(0xFF66AAF4),
+                    decorationColor: AppColors.readMore,
                   ),
                 ),
             ),

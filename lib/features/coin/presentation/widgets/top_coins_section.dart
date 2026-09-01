@@ -35,11 +35,11 @@ class TopCoinsSection extends StatelessWidget {
                 ),
                 padding: const EdgeInsets.symmetric(vertical: 14),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF7F2FA),
+                  color: AppColors.top3CardBg,
                   borderRadius: BorderRadius.circular(14),
                   boxShadow: const [
                     BoxShadow(
-                      color: Color(0xFFE1DBE2),
+                      color: AppColors.top3CardShadow,
                       blurRadius: 6,
                       offset: Offset(0, 2),
                     ),
@@ -63,7 +63,7 @@ class TopCoinsSection extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
-                        color: Color(0xFF5A585C),
+                        color: AppColors.textMuted,
                       ),
                     ),
                     const SizedBox(height: 6),

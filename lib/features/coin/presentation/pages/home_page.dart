@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/di.dart';
 import '../../../../core/invite_positions.dart';
+import '../../../../core/theme.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../data/models/coin.dart';
 import '../cubit/coin_detail_cubit.dart';
@@ -132,9 +133,9 @@ class _HomePageState extends State<HomePage> {
               child: Center(
                 child: Text(
                   l10n.noCoinsFound,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 14,
-                    color: Color(0xFF6B7280),
+                    color: AppColors.textTertiary,
                   ),
                 ),
               ),

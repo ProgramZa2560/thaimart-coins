@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../../../core/constants.dart';
+import '../../../../core/theme.dart';
 import '../../../../l10n/app_localizations.dart';
 
 class InviteFriendsTile extends StatelessWidget {
   const InviteFriendsTile({super.key});
 
-  static const iconColor = Color(0xFF6A43B8);
-  static const headColor = Color(0xFF5E31B2);
-  static const subColor = Color(0xFFA994D3);
-  static const backgroundColor = Color(0xFFEDE7F6);
+  static const iconColor = AppColors.inviteIcon;
+  static const headColor = AppColors.inviteHead;
+  static const subColor = AppColors.inviteSub;
+  static const backgroundColor = AppColors.inviteBg;
 
   @override
   Widget build(BuildContext context) {

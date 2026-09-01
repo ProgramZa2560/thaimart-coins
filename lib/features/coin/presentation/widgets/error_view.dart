@@ -29,7 +29,7 @@ class ErrorView extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
-                color: Color(0xFF715EA9),
+                color: AppColors.tryAgain,
               ),
             ),
           ),
