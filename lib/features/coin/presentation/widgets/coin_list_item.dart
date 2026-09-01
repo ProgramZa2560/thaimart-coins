@@ -19,7 +19,7 @@ class CoinListItem extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
             child: Row(
               children: [
                 CoinIcon(url: coin.iconUrl, size: 46),

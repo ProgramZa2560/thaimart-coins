@@ -12,6 +12,7 @@ class CoinDetailSheet extends StatelessWidget {
   final String uuid;
 
   static void show(BuildContext context, String uuid) {
+    FocusManager.instance.primaryFocus?.unfocus();
     showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
@@ -23,6 +24,8 @@ class CoinDetailSheet extends StatelessWidget {
         create: (_) => sl<CoinDetailCubit>()..load(uuid),
         child: CoinDetailSheet(uuid: uuid),
       ),
+    ).whenComplete(
+      () => FocusManager.instance.primaryFocus?.unfocus(),
     );
   }
 

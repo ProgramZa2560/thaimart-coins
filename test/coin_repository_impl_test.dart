@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
+import 'package:coinmarket/core/constants.dart';
 import 'package:coinmarket/features/coin/data/api/coin_api_client.dart';
 import 'package:coinmarket/features/coin/data/models/coin.dart';
 import 'package:coinmarket/features/coin/data/repositories/coin_repository_impl.dart';
@@ -34,20 +35,21 @@ void main() {
   group('CoinRepositoryImpl', () {
     test('getCoins passes limit and offset to client', () async {
       final coins = [_coin('BTC'), _coin('ETH')];
-      when(() => client.getCoins(limit: 10, offset: 20))
+      when(() => client.getCoins(limit: AppConstants.pageSize, offset: 20))
           .thenAnswer((_) async => coins);
 
       final result = await repository.getCoins(offset: 20);
 
       expect(result, coins);
-      verify(() => client.getCoins(limit: 10, offset: 20)).called(1);
+      verify(() => client.getCoins(limit: AppConstants.pageSize, offset: 20))
+          .called(1);
     });
 
     test('searchCoins passes keyword, limit and offset to client', () async {
       final coins = [_coin('BTC')];
       when(() => client.searchCoins(
             keyword: 'bitcoin',
-            limit: 10,
+            limit: AppConstants.pageSize,
             offset: 10,
           )).thenAnswer((_) async => coins);
 
@@ -59,7 +61,7 @@ void main() {
       expect(result, coins);
       verify(() => client.searchCoins(
             keyword: 'bitcoin',
-            limit: 10,
+            limit: AppConstants.pageSize,
             offset: 10,
           )).called(1);
     });

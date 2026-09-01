@@ -21,7 +21,7 @@ Coin _coin(String uuid, {num change = 1}) {
   );
 }
 
-List<Coin> _page(int page, {int size = 10}) {
+List<Coin> _page(int page, {int size = AppConstants.pageSize}) {
   return List.generate(size, (i) => _coin('coin-${page * size + i}'));
 }
 
@@ -71,7 +71,7 @@ void main() {
         coins: _page(0),
       ),
       build: () {
-        when(() => repository.getCoins(offset: 10))
+        when(() => repository.getCoins(offset: AppConstants.pageSize))
             .thenAnswer((_) async => _page(1));
         return CoinListCubit(repository);
       },
@@ -80,7 +80,7 @@ void main() {
         predicate<CoinListState>((s) => s.isLoadingMore),
         predicate<CoinListState>((s) =>
             !s.isLoadingMore &&
-            s.coins.length == 20 &&
+            s.coins.length == AppConstants.pageSize * 2 &&
             s.hasMore),
       ],
     );
@@ -92,14 +92,16 @@ void main() {
         coins: _page(0),
       ),
       build: () {
-        when(() => repository.getCoins(offset: 10))
+        when(() => repository.getCoins(offset: AppConstants.pageSize))
             .thenAnswer((_) async => _page(1, size: 3));
         return CoinListCubit(repository);
       },
       act: (cubit) => cubit.loadMore(),
       expect: () => [
         predicate<CoinListState>((s) => s.isLoadingMore),
-        predicate<CoinListState>((s) => !s.hasMore && s.coins.length == 13),
+        predicate<CoinListState>((s) =>
+            !s.hasMore &&
+            s.coins.length == AppConstants.pageSize + 3),
       ],
     );
 
@@ -110,7 +112,8 @@ void main() {
         coins: _page(0),
       ),
       build: () {
-        when(() => repository.getCoins(offset: 10)).thenThrow(Exception());
+        when(() => repository.getCoins(offset: AppConstants.pageSize))
+            .thenThrow(Exception());
         return CoinListCubit(repository);
       },
       act: (cubit) => cubit.loadMore(),
@@ -190,7 +193,8 @@ void main() {
       expect: () => [
         predicate<CoinListState>((s) => s.isRefreshing),
         predicate<CoinListState>((s) =>
-            !s.isRefreshing && s.coins.first.uuid == 'coin-90'),
+            !s.isRefreshing &&
+            s.coins.first.uuid == _page(9).first.uuid),
       ],
     );
 

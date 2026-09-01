@@ -56,6 +56,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _openDetail(BuildContext context, Coin coin) {
+    FocusScope.of(context).unfocus();
     final isWide = MediaQuery.of(context).size.width >= wideBreakpoint;
     if (isWide) {
       setState(() => _selectedUuid = coin.uuid);

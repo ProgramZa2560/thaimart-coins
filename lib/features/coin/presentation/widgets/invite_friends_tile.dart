@@ -24,7 +24,7 @@ class InviteFriendsTile extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
               child: Row(
                 children: [
                 SizedBox(
@@ -38,7 +38,7 @@ class InviteFriendsTile extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(width: 10),
+                const SizedBox(width: 12),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

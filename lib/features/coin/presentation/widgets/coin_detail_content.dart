@@ -60,7 +60,7 @@ class CoinDetailContent extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final hasWebsite = coin.websiteUrl != null && coin.websiteUrl!.isNotEmpty;
     return SingleChildScrollView(
-      padding: const EdgeInsets.fromLTRB(20, 12, 20, 24),
+      padding: const EdgeInsets.fromLTRB(12, 12, 12, 24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -136,7 +136,6 @@ class CoinDetailContent extends StatelessWidget {
             ),
           ),
           if (hasWebsite) ...[
-            const SizedBox(height: 12),
             GestureDetector(
               onTap: () => launchUrl(
                 Uri.parse(coin.websiteUrl!),
@@ -146,6 +145,7 @@ class CoinDetailContent extends StatelessWidget {
                   l10n.readMore,
                   style: const TextStyle(
                     fontSize: 14,
+                    height: 1.5,
                     fontWeight: FontWeight.w600,
                     color: Color(0xFF66AAF4),
                     decoration: TextDecoration.underline,
