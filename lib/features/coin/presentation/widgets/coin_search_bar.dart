@@ -56,8 +56,8 @@ class _CoinSearchBarState extends State<CoinSearchBar> {
             padding: EdgeInsets.only(left: 13, right: 13),
             child: Icon(Icons.search, color: AppColors.textSecondary, size: 22),
           ),
-          prefixIconColor: AppColors.textSecondary,
           prefixIconConstraints: const BoxConstraints(minWidth: 48),
+          contentPadding: EdgeInsets.zero,
           suffixIcon: ValueListenableBuilder<TextEditingValue>(
             valueListenable: _controller,
             builder: (_, value, _) {
