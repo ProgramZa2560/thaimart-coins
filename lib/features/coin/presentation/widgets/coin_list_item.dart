@@ -22,8 +22,8 @@ class CoinListItem extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
             child: Row(
               children: [
-                CoinIcon(url: coin.iconUrl),
-                const SizedBox(width: 12),
+                CoinIcon(url: coin.iconUrl, size: 46),
+                const SizedBox(width: 10),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,7 +36,7 @@ class CoinListItem extends StatelessWidget {
                           color: AppColors.textPrimary,
                         ),
                       ),
-                      const SizedBox(height: 4),
+                      const SizedBox(height: 1),
                       Text(
                         AppFormatters.formatMarketCap(coin.marketCap),
                         style: const TextStyle(
@@ -66,7 +66,7 @@ class CoinListItem extends StatelessWidget {
               ],
             ),
           ),
-          const Divider(height: 1, indent: 68),
+          const Divider(height: 1, indent: 72),
         ],
       ),
     );
