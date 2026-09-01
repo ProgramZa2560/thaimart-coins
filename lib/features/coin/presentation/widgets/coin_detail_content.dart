@@ -13,12 +13,51 @@ class CoinDetailContent extends StatelessWidget {
 
   final Coin coin;
 
+  static const _nameStyle = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
+  );
+
+  static const _symbolStyle = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
+    color: AppColors.textSecondary,
+  );
+
+  List<InlineSpan> _buildTitleSpans() {
+    final name = coin.name.trim();
+    final symbol = coin.symbol.trim();
+    final color = _titleColor;
+    if (name.isEmpty) {
+      return [
+        TextSpan(text: symbol, style: _nameStyle.copyWith(color: color)),
+      ];
+    }
+    if (symbol.isEmpty) {
+      return [TextSpan(text: name, style: _nameStyle.copyWith(color: color))];
+    }
+    return [
+      TextSpan(text: name, style: _nameStyle.copyWith(color: color)),
+      TextSpan(text: ' ($symbol)', style: _symbolStyle),
+    ];
+  }
+
+  Color get _titleColor {
+    final c = coin.color;
+    if (c == null || c.isEmpty) return Colors.black;
+    var hex = c.replaceFirst('#', '');
+    if (hex.length == 3) {
+      hex = hex.split('').map((ch) => '$ch$ch').join();
+    }
+    if (hex.length != 6) return Colors.black;
+    final value = int.tryParse('0xff$hex');
+    if (value == null) return Colors.black;
+    return Color(value);
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final color = coin.color != null && coin.color!.isNotEmpty
-        ? Color(int.parse(coin.color!.replaceFirst('#', '0xff')))
-        : Colors.black;
     final hasWebsite = coin.websiteUrl != null && coin.websiteUrl!.isNotEmpty;
     return SingleChildScrollView(
       padding: const EdgeInsets.fromLTRB(20, 12, 20, 24),
@@ -35,22 +74,7 @@ class CoinDetailContent extends StatelessWidget {
                   children: [
                     Text.rich(
                       TextSpan(
-                        text: coin.name,
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                          color: color,
-                        ),
-                        children: [
-                          TextSpan(
-                            text: ' (${coin.symbol})',
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
-                              color: AppColors.textSecondary,
-                            ),
-                          ),
-                        ],
+                        children: _buildTitleSpans(),
                       ),
                     ),
                     const SizedBox(height: 4),
