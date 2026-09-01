@@ -14,7 +14,7 @@ class ChangeBadge extends StatelessWidget {
     final color = isUp ? AppColors.green : AppColors.red;
     final borderColor = isUp ? AppColors.greenBorder : AppColors.redBorder;
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(20),
@@ -25,6 +25,8 @@ class ChangeBadge extends StatelessWidget {
         style: const TextStyle(
           fontSize: 8,
           fontWeight: FontWeight.w600,
+          height: 1.0,
+          leadingDistribution: TextLeadingDistribution.even,
           color: Colors.white,
         ),
       ),
