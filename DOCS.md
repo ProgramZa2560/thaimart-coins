@@ -182,7 +182,18 @@
 
 ---
 
-## 10. Install / Deploy
+## 10. App Icon
+
+| ตำแหน่ง | ไฟล์ |
+|---|---|
+| ต้นฉบับ | `iconapp.png` (1254×1254 — ไม่ commit) |
+| Android launcher | `mipmap-*/ic_launcher.png` (48–192) |
+| iOS | `AppIcon.appiconset` ครบทุก size (20–1024) |
+| Web favicon (tab browser) | `web/favicon.png` (64) |
+| Web PWA | `web/icons/icon-192.png`, `icon-512.png`, maskable ×2 (padding 66%) |
+| Install page | header icon |
+
+## 11. Install / Deploy
 
 | ช่องทาง | วิธี |
 |---|---|
@@ -190,6 +201,9 @@
 | **iPhone/iPad (PWA)** | เปิดลิงก์ใน Safari → Share ⬆︎ → เลื่อนล่างสุด → Add to Home Screen (ไม่ต้องมีคอม) |
 | **Android** | Chrome → Install app หรือดาวน์โหลด APK จาก [CD artifacts](https://github.com/ProgramZa2560/thaimart-coins/actions/workflows/cd.yml) |
 | **iOS แบบแอปจริง** | ต้องมี paid Apple Developer ($99/ปี) — ปัจจุบัน IPA เป็น unsigned |
+
+**Splash ทุก platform ใช้ icon แอปเดียวกัน** (`iconapp.png` → favicon, PWA icons,
+หน้า loading บน web (logo + spinner), Android launcher icon และ launch screen):
 
 ![Install page](docs/img/install.png)
 

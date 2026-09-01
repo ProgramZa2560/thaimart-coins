@@ -151,6 +151,10 @@ Live web app: https://programza2560.github.io/thaimart-coins/
 **Install page (PWA guide + APK download):**
 https://programza2560.github.io/thaimart-coins/install.html
 
+<p align="center">
+  <img src="docs/img/install.png" width="240" alt="Install page">
+</p>
+
 **How to install:**
 
 📱 **iPhone / iPad** (no computer needed):
