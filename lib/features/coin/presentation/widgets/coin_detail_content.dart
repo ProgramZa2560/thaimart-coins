@@ -27,14 +27,7 @@ class CoinDetailContent extends StatelessWidget {
         children: [
           Row(
             children: [
-              Container(
-                padding: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.12),
-                  shape: BoxShape.circle,
-                ),
-                child: CoinIcon(url: coin.iconUrl, size: 36),
-              ),
+              CoinIcon(url: coin.iconUrl, size: 64),
               const SizedBox(width: 12),
               Expanded(
                 child: Column(
