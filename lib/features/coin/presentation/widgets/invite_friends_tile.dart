@@ -27,12 +27,18 @@ class InviteFriendsTile extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
               child: Row(
                 children: [
-                  const Icon(
-                    Icons.person_add_alt_1,
-                    color: iconColor,
-                    size: 28,
+                SizedBox(
+                  width: 46,
+                  height: 46,
+                  child: Center(
+                    child: Icon(
+                      Icons.person_add_alt_1,
+                      color: iconColor,
+                      size: 28,
+                    ),
                   ),
-                  const SizedBox(width: 12),
+                ),
+                const SizedBox(width: 10),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,7 +65,7 @@ class InviteFriendsTile extends StatelessWidget {
                 ],
               ),
             ),
-            const Divider(height: 1, indent: 68),
+            const Divider(height: 1, indent: 72),
           ],
         ),
       ),

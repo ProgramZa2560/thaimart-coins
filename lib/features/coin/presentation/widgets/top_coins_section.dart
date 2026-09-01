@@ -62,7 +62,7 @@ class TopCoinsSection extends StatelessWidget {
                       AppFormatters.formatPrice(coin.price),
                       style: const TextStyle(
                         fontSize: 12,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w400,
                         color: Color(0xFF5A585C),
                       ),
                     ),

@@ -52,7 +52,12 @@ class _CoinSearchBarState extends State<CoinSearchBar> {
         decoration: InputDecoration(
           hintText: l10n.searchHint,
           hintStyle: const TextStyle(color: AppColors.textSecondary),
-          prefixIcon: const Icon(Icons.search, color: AppColors.textSecondary),
+          prefixIcon: const Padding(
+            padding: EdgeInsets.only(left: 13, right: 13),
+            child: Icon(Icons.search, color: AppColors.textSecondary, size: 22),
+          ),
+          prefixIconColor: AppColors.textSecondary,
+          prefixIconConstraints: const BoxConstraints(minWidth: 48),
           suffixIcon: ValueListenableBuilder<TextEditingValue>(
             valueListenable: _controller,
             builder: (_, value, _) {
