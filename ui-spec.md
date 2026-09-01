@@ -28,7 +28,8 @@
 | inviteBg | `#EDE7F6` | พื้นหลัง invite tile |
 
 ### Font
-- System font ของ platform (SF Pro บน iOS) — ห้ามใช้ Inter / google_fonts
+- **SF Pro Display (bundled)** — ลงทะเบียนใน pubspec.yaml (Regular 400 / Medium 500 / Bold 700) ใช้ทุก platform รวม web
+- ห้ามใช้ Inter / google_fonts
 
 ## Layout
 

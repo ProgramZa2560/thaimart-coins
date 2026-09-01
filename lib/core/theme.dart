@@ -15,8 +15,12 @@ class AppColors {
 }
 
 class AppTheme {
+  /// Bundled SF Pro Display — same font on every platform including web.
+  static const fontFamily = 'SF Pro Display';
+
   static ThemeData get light => ThemeData(
         useMaterial3: true,
+        fontFamily: fontFamily,
         scaffoldBackgroundColor: AppColors.background,
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.accent,
