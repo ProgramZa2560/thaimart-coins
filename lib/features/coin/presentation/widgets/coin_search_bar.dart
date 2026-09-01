@@ -50,7 +50,7 @@ class _CoinSearchBarState extends State<CoinSearchBar> {
           color: AppColors.searchField,
           borderRadius: BorderRadius.circular(12),
         ),
-        padding: const EdgeInsets.fromLTRB(10, 0, 4, 0),
+        padding: const EdgeInsets.fromLTRB(7, 0, 4, 0),
         child: Row(
           children: [
             const Icon(
@@ -58,7 +58,7 @@ class _CoinSearchBarState extends State<CoinSearchBar> {
               color: AppColors.textSecondary,
               size: 20,
             ),
-            const SizedBox(width: 10),
+            const SizedBox(width: 4),
             Expanded(
               child: TextField(
                 controller: _controller,
