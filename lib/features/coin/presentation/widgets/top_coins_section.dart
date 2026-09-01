@@ -63,7 +63,7 @@ class TopCoinsSection extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
-                        color: AppColors.textPrimary,
+                        color: Color(0xFF5A585C),
                       ),
                     ),
                     const SizedBox(height: 6),
