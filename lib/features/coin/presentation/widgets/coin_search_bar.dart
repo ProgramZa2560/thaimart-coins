@@ -85,6 +85,12 @@ class _CoinSearchBarState extends State<CoinSearchBar> {
               builder: (_, value, _) {
                 if (value.text.isEmpty) return const SizedBox.shrink();
                 return IconButton(
+                  constraints: const BoxConstraints(
+                    minWidth: 36,
+                    minHeight: 36,
+                  ),
+                  padding: EdgeInsets.zero,
+                  visualDensity: VisualDensity.compact,
                   icon: const Icon(
                     Icons.close,
                     color: AppColors.textSecondary,
