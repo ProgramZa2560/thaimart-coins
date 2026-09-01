@@ -115,6 +115,18 @@ flutter test
   refresh, refresh suppressed while searching.
 - `Coin` uses `Equatable`, so state equality is verified on field values.
 
+## Typography
+
+The app bundles **SF Pro Display** (Regular 400 / Medium 500 / Bold 700) in
+`fonts/` so every platform — including the web build — renders with the same
+typeface. Weight 600 falls back to the nearest registered weight.
+
+> ⚠️ **License warning:** SF Pro is proprietary to Apple Inc. Its license
+> restricts redistribution and commercial embedding. It is used here for this
+> assignment/portfolio demo only. For any production or commercial release,
+> replace it with a licensed typeface (e.g. Roboto, Public Sans, Noto Sans —
+> *not* Inter, which is excluded by the assignment rules).
+
 ## CI/CD
 
 Two GitHub Actions workflows:
