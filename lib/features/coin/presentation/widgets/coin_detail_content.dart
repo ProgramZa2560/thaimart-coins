@@ -26,6 +26,7 @@ class CoinDetailContent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 padding: const EdgeInsets.all(8),
@@ -37,51 +38,75 @@ class CoinDetailContent extends StatelessWidget {
               ),
               const SizedBox(width: 12),
               Expanded(
-                child: Text(
-                  '${coin.name} (${coin.symbol})',
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.textPrimary,
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text.rich(
+                      TextSpan(
+                        text: coin.name,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.textPrimary,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: ' (${coin.symbol})',
+                            style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.textSecondary,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text.rich(
+                      TextSpan(
+                        text: '${l10n.price}: ',
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.textPrimary,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: AppFormatters.formatPrice(coin.price),
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.textSecondary,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text.rich(
+                      TextSpan(
+                        text: '${l10n.marketCap}: ',
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.textPrimary,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: AppFormatters.formatMarketCap(coin.marketCap),
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.textSecondary,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
+              const SizedBox(width: 8),
               ChangeBadge(change: coin.change),
             ],
-          ),
-          const SizedBox(height: 12),
-          Text.rich(
-            TextSpan(
-              text: '${l10n.price}: ',
-              style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w700,
-                color: AppColors.textPrimary,
-              ),
-              children: [
-                TextSpan(
-                  text: AppFormatters.formatPrice(coin.price),
-                  style: const TextStyle(fontWeight: FontWeight.w600),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text.rich(
-            TextSpan(
-              text: '${l10n.marketCap}: ',
-              style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w700,
-                color: AppColors.textPrimary,
-              ),
-              children: [
-                TextSpan(
-                  text: AppFormatters.formatMarketCap(coin.marketCap),
-                  style: const TextStyle(fontWeight: FontWeight.w600),
-                ),
-              ],
-            ),
           ),
           const SizedBox(height: 16),
           Text(
@@ -91,7 +116,7 @@ class CoinDetailContent extends StatelessWidget {
             style: const TextStyle(
               fontSize: 14,
               height: 1.5,
-              color: AppColors.textPrimary,
+              color: AppColors.textSecondary,
             ),
           ),
           if (hasWebsite) ...[
