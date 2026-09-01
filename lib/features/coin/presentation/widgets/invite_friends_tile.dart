@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../../../core/constants.dart';
-import '../../../../core/theme.dart';
 import '../../../../l10n/app_localizations.dart';
 
 class InviteFriendsTile extends StatelessWidget {
   const InviteFriendsTile({super.key});
+
+  static const iconColor = Color(0xFF6A43B8);
+  static const headColor = Color(0xFF5E31B2);
+  static const subColor = Color(0xFFA994D3);
+  static const backgroundColor = Color(0xFFEDE7F6);
 
   @override
   Widget build(BuildContext context) {
@@ -15,42 +19,49 @@ class InviteFriendsTile extends StatelessWidget {
       onTap: () => SharePlus.instance.share(
         ShareParams(text: AppConstants.inviteUrl),
       ),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-            child: Row(
-              children: [
-                Icon(Icons.person_add_alt_1, color: AppColors.accent, size: 28),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        l10n.inviteFriends,
-                        style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.accent,
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        l10n.inviteSubtitle,
-                        style: const TextStyle(
-                          fontSize: 12,
-                          color: AppColors.textSecondary,
-                        ),
-                      ),
-                    ],
+      child: Container(
+        color: backgroundColor,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+              child: Row(
+                children: [
+                  const Icon(
+                    Icons.person_add_alt_1,
+                    color: iconColor,
+                    size: 28,
                   ),
-                ),
-              ],
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          l10n.inviteFriends,
+                          style: const TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w700,
+                            color: headColor,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          l10n.inviteSubtitle,
+                          style: const TextStyle(
+                            fontSize: 12,
+                            color: subColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          const Divider(height: 1, indent: 68),
-        ],
+            const Divider(height: 1, indent: 68),
+          ],
+        ),
       ),
     );
   }
