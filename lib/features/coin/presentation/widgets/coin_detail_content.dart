@@ -90,7 +90,7 @@ class CoinDetailContent extends StatelessWidget {
                           TextSpan(
                             text: AppFormatters.formatPrice(coin.price),
                             style: const TextStyle(
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w400,
                               color: Color(0xFF6D6A6F),
                             ),
                           ),
@@ -110,7 +110,7 @@ class CoinDetailContent extends StatelessWidget {
                           TextSpan(
                             text: AppFormatters.formatMarketCap(coin.marketCap),
                             style: const TextStyle(
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w400,
                               color: Color(0xFF6D6A6F),
                             ),
                           ),

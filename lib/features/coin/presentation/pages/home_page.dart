@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> {
     final mainCoins = state.isSearching ? state.coins : state.coins.sublist(3);
     var displayPosition = 1;
     for (final coin in mainCoins) {
-      if (_isInvitePosition(displayPosition)) {
+      if (!state.isSearching && _isInvitePosition(displayPosition)) {
         rows.add(const _InviteRow());
         displayPosition++;
       }

@@ -55,7 +55,7 @@ class CoinListItem extends StatelessWidget {
                       AppFormatters.formatPrice(coin.price),
                       style: const TextStyle(
                         fontSize: 15,
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w400,
                         color: AppColors.textPrimary,
                       ),
                     ),
