@@ -21,7 +21,7 @@ class TopCoinsSection extends StatelessWidget {
     final top3 = coins.take(3).toList();
     if (top3.length < 3) return const SizedBox.shrink();
     return Padding(
-      padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+      padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
       child: Row(
         children: List.generate(top3.length, (index) {
           final coin = top3[index];

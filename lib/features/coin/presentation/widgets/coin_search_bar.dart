@@ -44,7 +44,7 @@ class _CoinSearchBarState extends State<CoinSearchBar> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Padding(
-      padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+      padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
       child: Container(
         decoration: BoxDecoration(
           color: AppColors.searchField,
